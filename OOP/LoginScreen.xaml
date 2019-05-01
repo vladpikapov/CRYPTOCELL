@@ -1,0 +1,45 @@
+﻿<Window x:Class="OOP.LoginScreen"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="LoginScreen" Height="550" Width="400" WindowStyle="None" ResizeMode="NoResize">
+    <Grid Background="#005763">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#005763" MouseDown="Grid_MouseDown">
+            <Button Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Click="Button_Click" Height="40">
+                <materialDesign:PackIcon Kind="Close" Foreground="White" HorizontalAlignment="Center"/>
+            </Button>
+
+        </Grid>
+        <Grid Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Frame Background="#33B9CC" Name="logFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Width="400"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Sign up" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="Sign_up" Width="200" Height="50" Grid.Column="1" Click="Sign_up_Click" BorderBrush="#005763" Background="#005763"/>
+                <Button Content="Sign in" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" x:Name="Sign_in" Height="50" Click="Sign_in_Click" materialDesign:ShadowAssist.ShadowEdges="Bottom" BorderBrush="#005763" Background="#005763"/>
+            </Grid>
+            <Button Content="Forgot password?" Name="ForgotPass" Background="{x:Null}"  HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Margin="120,389,120,30" Click="Button_Click_1" Height="Auto" Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</Window>
