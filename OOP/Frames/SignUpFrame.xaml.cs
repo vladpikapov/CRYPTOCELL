@@ -1,22 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MaterialDesignThemes;
-using OOP.MailSends;
-using OOP.Validators;
+using BLL.Secure;
+using BLL.WorkWithUser.MailSender;
+using BLL.WorkWithUser;
+using BLL.DTO;
+using BLL.Validators;
 
 namespace OOP.Frames
 {
@@ -25,10 +15,11 @@ namespace OOP.Frames
     /// </summary>
     public partial class SignUpFrame : Page
     {
-        MailSender mailsend = new MailSender();
+        Sender mailsend = new Sender();
+        WorkWithUserLog logWork = new WorkWithUserLog();
         private Random key = new Random();
         private int userCode = 0;
-        
+
         InputValidator validator;
         public SignUpFrame()
         {
@@ -37,7 +28,6 @@ namespace OOP.Frames
         }
         private void ChangeVisible()
         {
-
             LoginUser.Visibility = Visibility.Collapsed;
             UserMail.Visibility = Visibility.Collapsed;
             UserFirstPass.Visibility = Visibility.Collapsed;
@@ -50,17 +40,16 @@ namespace OOP.Frames
             CheckCode.Visibility = Visibility.Visible;
             SubmitBut.Visibility = Visibility.Visible;
             CheckBlock.Visibility = Visibility.Visible;
-
-        }        
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(validator.MyValidate(LoginUser,UserMail,UserFirstPass,UserSecondPass))
-            {        
-                    ChangeVisible();
-                   userCode = key.Next(1000, 10000);
-                    mailsend.UserCheckMail(userCode, UserMail);          
+            if (validator.MyValidate(LoginUser, UserMail, UserFirstPass, UserSecondPass))
+            {
+                ChangeVisible();
+                userCode = key.Next(1000, 10000);
+                mailsend.UserCheckMail(userCode, UserMail.Text);
             }
-          
+
         }
 
         private void LoginUser_TextChanged(object sender, TextChangedEventArgs e)
@@ -82,20 +71,27 @@ namespace OOP.Frames
             if (!string.IsNullOrEmpty(CheckCode.Text))
             {
                 int.TryParse(CheckCode.Text, out result);
-                MessageBox.Show(result.ToString());
                 if (userCode == result)
                 {
-                    mailsend.SendUserInfo(UserMail, UserFirstPass, LoginUser);
+                    mailsend.SendUserInfo(UserMail.Text, UserFirstPass.Password, LoginUser.Text);
                     SuccessMessage.Visibility = Visibility.Visible;
                     CheckBlock.Visibility = Visibility.Collapsed;
                     CheckCode.Visibility = Visibility.Collapsed;
                     SubmitBut.Visibility = Visibility.Collapsed;
+                    HashAndCheck check = new HashAndCheck();
+                    try
+                    {
+                        logWork.AddUser(new Users_LogDTO { UserLogName = LoginUser.Text, UserLogPassword = check.HashPassword(UserFirstPass.Password), UserMail = UserMail.Text });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                else
-                {
-                    CheckCode.BorderBrush = Brushes.Red;
-                }
-                    
+            }
+            else
+            {
+                CheckCode.BorderBrush = Brushes.Red;
             }
         }
     }

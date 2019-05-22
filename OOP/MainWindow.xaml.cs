@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using OOP.Frames;
+using BLL.DTO;
+using OOP.Frames.MainWindowFrames;
 
 namespace OOP
 {
@@ -21,25 +11,21 @@ namespace OOP
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+
+        private Users_InfoDTO user { get; set; }
+        public MainWindow(string name)
         {
             InitializeComponent();
-            Frame.Navigate(new MainFrame());
+            user = new Users_InfoDTO { UserName = name };
+            Frame.Navigate(new MainFrame(user));
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (WindowState == WindowState.Normal)
-                WindowState = WindowState.Maximized;
-            else
-                WindowState = WindowState.Normal;
-        }
-
+        
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -47,7 +33,39 @@ namespace OOP
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            DragMove();   
+        }
+
+        private void Profile_Selected(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new MainFrame(user));
+        }
+
+        private void UserWallet_Selected(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new WalletFrame(user));
+        }
+
+        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new WalletFrame(user));
+        }
+
+        private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new History(user));
+        }
+
+        private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(new Convert(user));
+        }
+
+        private void ListViewItem_Selected_3(object sender, RoutedEventArgs e)
+        {
+            LoginScreen login = new LoginScreen();
+            login.Show();
+            Close();
         }
     }
 }

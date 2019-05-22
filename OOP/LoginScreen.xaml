@@ -12,7 +12,7 @@
      TextOptions.TextRenderingMode="Auto"
      FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="LoginScreen" Height="550" Width="400" WindowStyle="None" ResizeMode="NoResize">
+        Title="LoginScreen" Height="550" Width="400" WindowStyle="None" ResizeMode="NoResize" Unloaded="Window_Unloaded">
     <Grid Background="#005763">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -30,6 +30,7 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <ProgressBar IsIndeterminate="True" Visibility="Hidden" Name="ProgressBarS" Margin="29,205,-29,235" Grid.Row="1" Height="Auto"></ProgressBar>
             <Frame Background="#33B9CC" Name="logFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Width="400"/>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>

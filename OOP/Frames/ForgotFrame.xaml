@@ -10,10 +10,18 @@
       Title="ForgotFrame">
 
     <StackPanel Orientation="Vertical">
-        <TextBlock Text="Enter your mail" FontSize="20" HorizontalAlignment="Left" Height="30" Foreground="White" FontWeight="Bold" Margin="50 50 0 30" />
-        <TextBox Height="50" FontSize="20" Foreground="White" Margin="50,0,50,0"   VerticalAlignment="Top"/>
-        <TextBlock Text="Repeat you mail" FontSize="20" HorizontalAlignment="Left" Height="30" Foreground="White" FontWeight="Bold" Margin="50 50 0 30" />
-        <TextBox Height="50" FontSize="20" Foreground="White" Margin="50,0,50,0"   />
-        <Button Content="Send message" Margin="130 50" Background="#005763" Click="Button_Click"/>
+        <TextBlock Text="Enter your login" FontSize="20" HorizontalAlignment="Center" Height="30" Name="EnterLog" Foreground="White" FontWeight="Bold" Margin="50 100 50 30" />
+        <TextBox Height="50" FontSize="20" Foreground="White" Margin="50,0,50,100"  Name="LoginUser" VerticalAlignment="Top"/>
+        <Button Content="Send message" Margin="130 50" Background="#005763" Name="SendButton" Click="SendButton_Click"/>
+        <TextBlock Text="Enter code" FontSize="20" HorizontalAlignment="Center" Height="30" Foreground="White" FontWeight="Bold" Name="CodeSend" Visibility="Collapsed" Margin="50 100 50 30" />
+        <TextBox Height="50" FontSize="20" Foreground="White" Margin="50,0,50,100"  Name="EnterCode" VerticalAlignment="Top" Visibility="Collapsed"/>
+        <TextBlock Text="Enter password" FontSize="20" HorizontalAlignment="Center" Height="30" Foreground="White" FontWeight="Bold" Name="PasswordF" Visibility="Collapsed" Margin="50 30 50 30" />
+        <TextBox Height="50" FontSize="20" Foreground="White" Margin="50,0,50,30"  Name="FirstPassword" VerticalAlignment="Top" Visibility="Collapsed"/>
+        <TextBlock Text="Repeat password" FontSize="20" HorizontalAlignment="Center" Height="30" Foreground="White" FontWeight="Bold" Name="PasswordS" Visibility="Collapsed" Margin="50 30 50 30" />
+        <TextBox Height="50" FontSize="20" Foreground="White" Margin="50,0,50,30"  Name="SecondPassword" VerticalAlignment="Top" Visibility="Collapsed"/>
+        <Button Content="Submit" Margin="130 50" Background="#005763" Name="SubmitPassButton" Click="SubmitPassButton_Click" Visibility="Collapsed"/>
+        <Button Content="Submit" Margin="130 50" Background="#005763" Name="SubmitButton" Click="SubmitButton_Click"  Visibility="Collapsed"/>
+        <TextBlock Text="You have successfully change password!" Name="SuccessMessage" Visibility="Collapsed" Margin="0 200 0 0" VerticalAlignment="Center" Foreground="White" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+
     </StackPanel>
 </Page>

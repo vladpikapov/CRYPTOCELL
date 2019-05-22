@@ -77,5 +77,11 @@ namespace OOP
             logFrame.Navigate(new ForgotFrame());
             ForgotPass.Visibility = Visibility.Hidden;
         }
+
+        private void Window_Unloaded(object sender, RoutedEventArgs e)
+        {
+            logFrame.Visibility = Visibility.Hidden;
+            ProgressBarS.Visibility = Visibility.Visible;
+        }
     }
 }

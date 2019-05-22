@@ -13,51 +13,54 @@
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="MainWindow" ResizeMode="NoResize" Height="600" Width="1024" WindowStyle="None">
+        Title="MainWindow" ResizeMode="NoResize" Height="730" Width="1300" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="70"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Frame  HorizontalAlignment="Stretch" Background="#33B9CC" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Stretch" Name="Frame" Grid.Column="1" Grid.Row="1"/>
-        <Grid Grid.Row="1" Grid.Column="0" Background="#005763">
-            <ListView>
+        <Image Source="C:\Users\vladnstr\source\repos\OOP\OOP\SomeIcons\1_vV7UVtEsnqqSFAHMDkoIUg.jpeg" Grid.Column="1" Grid.Row="1" />
 
-                <ListViewItem Height="60">
-                    <materialDesign:PackIcon Kind="Account" Margin="15 0 0 0" Foreground="White"/>
+        <Frame  HorizontalAlignment="Stretch" Background="#33B9CC" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" VerticalAlignment="Stretch" Name="Frame" Grid.Column="1" Grid.Row="1"/>
+
+        <Expander Background="#005763" Grid.Column="0" Foreground="White"  Grid.RowSpan="2" Name="Menu">
+            <ListView Margin="0 12">
+
+                <ListViewItem Height="60" ToolTip="Portfolio" Name="Profile" Selected="Profile_Selected">
+                    <materialDesign:PackIcon Kind="Account"  Margin="15 0 0 0" Foreground="White"/>
                 </ListViewItem>
-                <ListViewItem Height="60">
-                    <materialDesign:PackIcon Kind="Cash" Margin="15 0 0 0" Foreground="White"/>
+                <ListViewItem Height="60" ToolTip="Converter" Selected="ListViewItem_Selected_2">
+                    <materialDesign:PackIcon Kind="Bank" Margin="15 0 0 0" Foreground="White"/>
 
                 </ListViewItem>
-                <ListViewItem Height="60">
+                <ListViewItem Height="60" ToolTip="Send Assets" Selected="ListViewItem_Selected">
+                    <materialDesign:PackIcon Kind="CreditCard" Margin="15 0 0 0" Foreground="White"/>
+
+                </ListViewItem>
+                <ListViewItem Height="60" ToolTip="Check History" Selected="ListViewItem_Selected_1">
                     <materialDesign:PackIcon Kind="History" Margin="15 0 0 0" Foreground="White"/>
 
                 </ListViewItem>
-                <ListViewItem Height="60">
-                    <materialDesign:PackIcon Kind="Settings" Margin="15 0 0 0" Foreground="White"/>
+                <ListViewItem Height="60" ToolTip="Change account" Selected="ListViewItem_Selected_3" >
+                    <materialDesign:PackIcon Kind="AccountConvert" Margin="15 0 0 0" Foreground="White"/>
 
                 </ListViewItem>
 
             </ListView>
-        </Grid>
-        <Grid MouseDown="Grid_MouseDown" Background="#005763" Grid.ColumnSpan="2">
-            <Button HorizontalAlignment="Left" Width="60" Height="Auto" BorderBrush="{x:Null}" Background="#005763" materialDesign:ShadowAssist.ShadowDepth="Depth0" >
-                <materialDesign:PackIcon Kind="Menu"/>
-            </Button>
+        </Expander>
+        <Grid MouseDown="Grid_MouseDown" Background="#005763" Grid.Column="1">
             <Button HorizontalAlignment="Right" Height="60" Width="60" BorderBrush="{x:Null}" Background="#005763" materialDesign:ShadowAssist.ShadowDepth="Depth0" Click="Button_Click">
                 <materialDesign:PackIcon Kind="Close"/>
             </Button>
-            <Button HorizontalAlignment="Right" Margin="0 0 60 0" Height="60" Width="60" Background="#005763" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="{x:Null}" Click="Button_Click_1">
-                <materialDesign:PackIcon Kind="Fullscreen" />
-            </Button>
-            <Button Padding="0 5 0 0" HorizontalAlignment="Right" Margin="0 0 120 0" Height="60" Width="60" Background="#005763" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="{x:Null}" Click="Button_Click_2">
+
+            <Button Padding="0 5 0 0" HorizontalAlignment="Right" Margin="0 0 60 0" Height="60" Width="60" Background="#005763" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="{x:Null}" Click="Button_Click_2">
                 <materialDesign:PackIcon Kind="WindowMinimize" />
             </Button>
         </Grid>
     </Grid>
 </Window>
+

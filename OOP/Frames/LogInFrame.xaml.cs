@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using BLL.Secure;
+using BLL.WorkWithUser;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace OOP.Frames
 {
@@ -20,20 +12,42 @@ namespace OOP.Frames
     /// </summary>
     public partial class LogInFrame : Page
     {
+        WorkWithUserLog userLog;
         public LogInFrame()
         {
             InitializeComponent();
+            userLog = new WorkWithUserLog();
         }
-
+       
+        private bool isTrue()
+        {      
+                var check = new HashAndCheck();
+                var log = userLog.GetUser(UserLogin.Text);
+                if(log == null)
+                {
+                    UserLogin.BorderBrush = Brushes.Red;
+                    UserLogin.ToolTip = "Invalid login!";
+                    return false;
+                }
+                else
+                {
+                    UserLogin.BorderBrush = Brushes.Black;
+                }     
+                    if (check.VerifyHashedPassword(log.UserLogPassword, UserPassword.Password))
+                        return true;
+                UserPassword.ToolTip = "Wrong password";
+                UserPassword.BorderBrush = Brushes.Red;
+                return false;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            Application.Current.MainWindow.Close();
-            main.Show();
-            
-           
-        }
+            if (isTrue())
+            {
+                MainWindow main = new MainWindow(UserLogin.Text);
+                Application.Current.MainWindow.Close();
+                main.Show();
 
-       
+            }
+        }
     }
 }
