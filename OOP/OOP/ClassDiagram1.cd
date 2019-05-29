@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OOP.App">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP.MainFrame" BaseTypeListCollapsed="true">
+    <Position X="23.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABAAgIAAABAAIAAAAACAEAAQACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Frames\MainWindowFrames\MainFrame.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="userWork" />
+      <Field Name="work" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OOP.LoginScreen" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgABAAgABAAEAAEAAAAAAAAAAAAAAAAFAAA=</HashCode>
+      <FileName>LoginScreen.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OOP.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAACAAAEAAAEAAFAAAAAAAAAAAAAGAAEAQA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="user" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OOP.Frames.ForgotFrame" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAIIAAAAAIAAAAAIEECACAgAAAAAAAAABAAAAAAAU=</HashCode>
+      <FileName>Frames\ForgotFrame.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="log" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OOP.Frames.LogInFrame" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <AssociationLine Name="userLog" Type="BLL.WorkWithUser.WorkWithUserLog" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.5" Y="3.819" />
+        <Point X="13.5" Y="7.5" />
+        <Point X="13.25" Y="7.5" />
+        <Point X="13.25" Y="8.25" />
+        <Point X="13.5" Y="8.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="user" Type="BLL.WorkWithUser.WorkWithUserInfo" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="2.785" />
+        <Point X="14.625" Y="2.785" />
+        <Point X="14.625" Y="7.5" />
+        <Point X="15.698" Y="7.5" Type="JumpStart" />
+        <Point X="15.865" Y="7.5" Type="JumpEnd" />
+        <Point X="16.5" Y="7.5" />
+        <Point X="16.5" Y="9.997" />
+        <Point X="19.875" Y="9.997" />
+        <Point X="19.875" Y="9.062" />
+        <Point X="20.25" Y="9.062" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAQE=</HashCode>
+      <FileName>Frames\LogInFrame.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="userLog" />
+      <Property Name="user" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OOP.Frames.SignUpFrame" BaseTypeListCollapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAUAAABAAAAAAAUAAEAAAAAAggAAAIAAIAAAAA=</HashCode>
+      <FileName>Frames\SignUpFrame.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="logWork" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OOP.Frames.MainWindowFrames.Convert" BaseTypeListCollapsed="true">
+    <Position X="21.5" Y="1.75" Width="1.5" />
+    <AssociationLine Name="workCurreincies" Type="BLL.WorkWithUser.WorkWithCurreincies" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="23" Y="5.04" />
+        <Point X="23.375" Y="5.04" />
+        <Point X="23.375" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABCAgAAAEAGAAAAAAQAAEAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Frames\MainWindowFrames\Convert.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="workCurreincies" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OOP.Frames.MainWindowFrames.History" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <AssociationLine Name="user" Type="BLL.DTO.Users_InfoDTO" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.875" Y="2.983" />
+        <Point X="17.875" Y="3.358" />
+        <Point X="17.5" Y="3.358" />
+        <Point X="17.5" Y="8" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Frames\MainWindowFrames\History.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="work" />
+      <Property Name="user" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OOP.Frames.MainWindowFrames.WalletFrame" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <AssociationLine Name="workCur" Type="BLL.WorkWithUser.WorkWithCurreincies" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="5.744" />
+        <Point X="21.375" Y="5.744" />
+        <Point X="21.375" Y="7.083" />
+        <Point X="22" Y="7.083" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="workUser" Type="BLL.WorkWithUser.WorkWithUserTransact" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.234" Y="6.386" />
+        <Point X="20.234" Y="6.558" />
+        <Point X="19.5" Y="6.558" />
+        <Point X="19.5" Y="6.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAQgAAAAgAFDQAgAAAAABkAAAgAAAAAAgAEAIAAAQg=</HashCode>
+      <FileName>Frames\MainWindowFrames\WalletFrame.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="infoWork" />
+      <Field Name="workCur" />
+      <Field Name="workUser" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OOP.Properties.Resources">
+    <Position X="6.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP.Properties.Settings">
+    <Position X="6.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.WorkWithUser.WorkWithUserInfo">
+    <Position X="20.25" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="BLL.WorkWithUser.WorkWithUserLog">
+    <Position X="13.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BLL.WorkWithUser.WorkWithCurreincies">
+    <Position X="22" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BLL.WorkWithUser.WorkWithUserTransact">
+    <Position X="18.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="BLL.DTO.Users_InfoDTO">
+    <Position X="16.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,66 @@
+﻿<Window x:Class="OOP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="MainWindow" ResizeMode="NoResize" Height="730" Width="1400" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Source="C:\Users\vladnstr\source\repos\OOP\OOP\SomeIcons\1_vV7UVtEsnqqSFAHMDkoIUg.jpeg" Grid.Column="1" Grid.Row="1" />
+
+        <Frame  HorizontalAlignment="Stretch" Background="#33B9CC" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" VerticalAlignment="Stretch" Name="Frame" Grid.Column="1" Grid.Row="1"/>
+
+        <Grid Margin="0 60 0 0" Background="#117685" Grid.Column="0" Grid.RowSpan="2">
+            <ListView >
+
+                <ListViewItem Height="60" ToolTip="Portfolio" Name="Profile" Selected="Profile_Selected">
+                    <materialDesign:PackIcon Kind="Account"  Margin="15 0 0 0" Foreground="White"/>
+                </ListViewItem>
+                <ListViewItem Height="60" ToolTip="Converter" Selected="ListViewItem_Selected_2">
+                    <materialDesign:PackIcon Kind="Bank" Margin="15 0 0 0" Foreground="White"/>
+
+                </ListViewItem>
+                <ListViewItem Height="60" ToolTip="Send Assets" Selected="ListViewItem_Selected">
+                    <materialDesign:PackIcon Kind="CreditCard" Margin="15 0 0 0" Foreground="White"/>
+
+                </ListViewItem>
+                <ListViewItem Height="60" ToolTip="Check History" Selected="ListViewItem_Selected_1">
+                    <materialDesign:PackIcon Kind="History" Margin="15 0 0 0" Foreground="White"/>
+
+                </ListViewItem>
+                <ListViewItem Height="60" ToolTip="Change account" Selected="ListViewItem_Selected_3" >
+                    <materialDesign:PackIcon Kind="AccountConvert" Margin="15 0 0 0" Foreground="White"/>
+
+                </ListViewItem>
+
+            </ListView>
+        </Grid>
+        <Grid MouseDown="Grid_MouseDown" Background="#117685" Grid.ColumnSpan="2">
+            <Button HorizontalAlignment="Right" Height="60" Width="60" BorderBrush="{x:Null}" Background="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Click="Button_Click">
+                <materialDesign:PackIcon Kind="Close"/>
+            </Button>
+
+            <Button Padding="0 5 0 0" HorizontalAlignment="Right" Margin="0 0 60 0" Height="60" Width="60" Background="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderBrush="{x:Null}" Click="Button_Click_2">
+                <materialDesign:PackIcon Kind="WindowMinimize" />
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
+

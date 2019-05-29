@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAL.EF.CryptoCellDB">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAEAAhAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>EF\CryptoCellDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Entities.CURREINCIES">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAABAAAAAAAAAAgIAAAAQAAACAAAAA=</HashCode>
+      <FileName>Entities\CURREINCIES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Entities.USERS_INFO">
+    <Position X="7.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAgAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Entities\USERS_INFO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Entities.USERS_LOG">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAgAAAAAAABAAAAAGA=</HashCode>
+      <FileName>Entities\USERS_LOG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Entities.USERS_TRANSACTIONS">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAACAAAAAAAAAIAAAAAgAAgAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Entities\USERS_TRANSACTIONS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Repositories.CurreinciesRepository" BaseTypeListCollapsed="true">
+    <Position X="13" Y="2.75" Width="1.5" />
+    <AssociationLine Name="db" Type="DAL.EF.CryptoCellDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.406" Y="5.007" />
+        <Point X="14.406" Y="5.875" />
+        <Point X="11" Y="5.875" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.267" Y="0.206" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAQAAAQAABAAAAAAAAAAAAAAEAAAgQAAAAAAAA=</HashCode>
+      <FileName>Repositories\CurreunciesRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Repositories.UnityOfWork">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <AssociationLine Name="infoRepository" Type="DAL.Repositories.Users_InfoRepository" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.5" Y="1.875" />
+        <Point X="8.25" Y="1.875" />
+        <Point X="8.25" Y="2.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="logRepository" Type="DAL.Repositories.Users_LogRepository" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11" Y="2" />
+        <Point X="11.75" Y="2" />
+        <Point X="11.75" Y="2.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAQBAAAAAACAAAAAAEAAAAEIAEAAAAQAAA=</HashCode>
+      <FileName>Repositories\UnityOfWork.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="curreinciesRepository" />
+      <Field Name="db" />
+      <Field Name="infoRepository" />
+      <Field Name="logRepository" />
+      <Field Name="transactionsRepository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DAL.Repositories.Users_InfoRepository" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <AssociationLine Name="db" Type="DAL.EF.CryptoCellDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.344" Y="4.815" />
+        <Point X="8.344" Y="5.19" />
+        <Point X="9.562" Y="5.19" />
+        <Point X="9.562" Y="5.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAQAAAQAABAAAAAAAAAAAAAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Users_InfoRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Repositories.Users_LogRepository" BaseTypeListCollapsed="true">
+    <Position X="11" Y="2.75" Width="1.5" />
+    <AssociationLine Name="db" Type="DAL.EF.CryptoCellDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.781" Y="5.007" />
+        <Point X="11.781" Y="5.25" />
+        <Point X="11" Y="5.25" />
+        <Point X="11" Y="5.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAQAAAQAABAAAAAIAAAAAAAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Users_LogRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Repositories.Users_TransactionsRepository" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <AssociationLine Name="db" Type="DAL.EF.CryptoCellDB" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.844" Y="4.815" />
+        <Point X="5.844" Y="5.875" />
+        <Point X="9.5" Y="5.875" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAQAAAQAABAAAAAAAAAAAAAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Users_TransactionsRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="DAL.Interfaces.IRepository&lt;T&gt;">
+    <Position X="14.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAQAAAAAABAAAAAAAAAAAAAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
